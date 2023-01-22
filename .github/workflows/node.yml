@@ -10,14 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Taskfile CLI
-        run: sudo snap install task --classic
-
-      - name: Temp Test...
-        run: pwd && ls -la
-
-      - name: Build Docker Image
-        run: docker build -t 4lch4/node:latest -t 4lch4/node:1.0.0 ./Node
-
-      - name: Push/Publish Docker Image
-        run: docker push --all-tags 4lch4/node
+      - name: Build and Push Image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./Node
+          push: true
+          tags: 4lch4/node:latest,4lch4/node:1.0.0
