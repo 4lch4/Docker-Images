@@ -12,7 +12,7 @@ jobs:
         run: sudo snap install task --classic
 
       - name: Build Docker Image
-        run: task build:node
+        run: docker build -t 4lch4/node:latest -t 4lch4/node:1.0.0 ./Node
 
       - name: Push/Publish Docker Image
-        run: task push:node
+        run: docker push --all-tags 4lch4/node
