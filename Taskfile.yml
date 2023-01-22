@@ -1,0 +1,22 @@
+version: 3
+
+tasks:
+  pretty:
+    aliases: [p, format, fmt]
+    desc: Uses the Prettier CLI tool to format the codebase.
+    cmds: ['prettier --write .']
+
+  build:node:
+    aliases: [bn]
+    desc: Creates the parent docker image for Node with the Doppler CLI.
+    env:
+      IMG_VERSION: 1.0.0
+    cmds:
+      - docker build -t 4lch4/node:latest -t 4lch4/node:1.0.0 ./Node
+
+  push:node:
+    aliases: [pn]
+    desc: Pushes/publishes my built Docker image for NodeJS w/ the Doppler CLI to the Docker Hub.
+    deps: [build:node]
+    cmds:
+      - docker push --all-tags 4lch4/node
