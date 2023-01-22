@@ -1,8 +1,8 @@
 name: Build & Push Extended Node Docker Image
 
 on:
-  push:
   workflow_dispatch:
+  push:
 
 jobs:
   build:
@@ -21,4 +21,4 @@ jobs:
         with:
           context: ./Node
           push: true
-          tags: 4lch4/node:latest,4lch4/node:1.1.0
+          tags: 4lch4/node:latest,4lch4/node:1.1.1
