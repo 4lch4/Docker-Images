@@ -12,11 +12,17 @@ Now, let's break down each of the images this repository makes available.
 
 - [Parent Image][0]
 - [Docker Hub][4]
-- [GitHub Repository][3]
+- [Git Repository][3]
 
-This image is the one mentioned in the initial example.
+This image is the one mentioned in the initial example, and it starts with the official [Node image][0] that's tagged as [`lts`][2] and then adds the [Doppler CLI][1] so it can be used for secret management.
 
-It starts with the official [Node image][0] that's tagged as [`lts`][2] and then adds the [Doppler CLI][1] so it can be used for secret management.
+#### When Is It Built?
+
+The image is built and pushed to Docker Hub when any of the following events occur:
+
+- When a new change was pushed to the remote repository.
+- Once a day when it's 08:00 UTC or 02:00 CST.
+- When a developer kicks off a manual run via the GitHub UI (aka `workflow_dispatch`).
 
 #### Using the Doppler CLI
 
@@ -32,7 +38,9 @@ _NOTE: I also created a [CLI app](#cli-utility) to do this for you. If you're in
 
 ### CLI Utility
 
-In order to use the Doppler CLI you must pass a service token with at least read permissions for the config to be used. To make this easier, I've created a small CLI application, the **Doppler And Docker Starter** (`dads`), that will run a docker image that uses Doppler under the hood. Once it's installed on your machine (instructions need to be added) you can start a container like so:
+- [Git Repository][5]
+
+As mentioned above, in order to use the Doppler CLI you must pass a service token with at least read permissions for the config to be used. To make this easier, I've created a small CLI application, **Doppler And Docker Starter** (`dads`), that will run a docker image that uses Doppler under the hood. Once it's installed on your machine (instructions need to be added) you can start a container like so:
 
 ```bash
 #dads <app-name> <img-name> [doppler-token]
@@ -54,3 +62,4 @@ dads app-name-here image-name doppler-token-here
 [2]: https://hub.docker.com/_/node/tags?page=1&name=lts
 [3]: https://github.com/4lch4/Docker-Images/tree/main/Node
 [4]: https://hub.docker.com/repository/docker/4lch4/node/general
+[5]: https://git.4lch4.io/4lch4/Doppler-And-Docker-Starter
