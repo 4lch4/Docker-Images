@@ -16,7 +16,7 @@ Now, let's break down each of the images this repository makes available.
 
 This image is the one mentioned in the initial example, and it starts with the official [Node image][0] that's tagged as [`lts`][2] and then adds the [Doppler CLI][1] so it can be used for secret management.
 
-#### When Is It Built?
+#### When/How Often Is It Updated?
 
 The image is built and pushed to Docker Hub when any of the following events occur:
 
