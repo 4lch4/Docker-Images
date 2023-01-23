@@ -10,7 +10,7 @@ tasks:
     aliases: [bn]
     desc: Creates the parent docker image for Node with the Doppler CLI.
     cmds:
-      - docker build -t 4lch4/node:latest -t 4lch4/1.2.0 ./Node
+      - docker build -t 4lch4/node:latest ./Node
 
   push:node:
     aliases: [pn]
