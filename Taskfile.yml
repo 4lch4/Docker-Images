@@ -12,7 +12,7 @@ tasks:
     env:
       IMG_VERSION: 1.0.0
     cmds:
-      - docker build -t 4lch4/node:latest -t 4lch4/node:1.0.0 ./Node
+      - docker build -t 4lch4/node:latest ./Node
 
   push:node:
     aliases: [pn]
@@ -20,3 +20,15 @@ tasks:
     deps: [build:node]
     cmds:
       - docker push --all-tags 4lch4/node
+
+  build:all:
+    aliases: [ba]
+    desc: Executes the build command for all of the Docker Images I provide.
+    cmds:
+      - task: build:node
+
+  push:all:
+    aliases: [pa]
+    desc: Executes the push command for all of the Docker Images I provide.
+    cmds:
+      - task: push:node

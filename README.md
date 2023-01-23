@@ -55,6 +55,37 @@ dads app-name-here image-name
 dads app-name-here image-name doppler-token-here
 ```
 
+## Building the Images
+
+If you wish to build the images yourself then you have two options:
+
+1. Use the [Taskfile CLI][6] ([installation instructions][7]) to use the Taskfile build commands.
+2. Run the Docker build commands directly.
+
+Whichever method you wish to use, navigate to that section next to continue.
+
+### Taskfile CLI
+
+If you have the Taskfile CLI installed them you can use any of the build commands to build the Docker images.
+
+For example, if you wanted to build the node image then you'd run the following command from the root of the repository:
+
+```bash
+task build:node
+
+# You can also use the build:node alias like so:
+#task bn
+```
+
+### Docker Commands
+
+If you don't have, or want, the Taskfile CLI installed then you can pull the Docker commands directly from the Taskfile.yml and run them in your terminal.
+
+For example, if you wanted to build the node image then you'd run the following command from the root of the repository:
+
+```bash
+docker build -t 4lch4/node:latest -t 4lch4/node:1.0.0 ./Node
+```
 
 
 [0]: https://hub.docker.com/_/node
@@ -63,3 +94,5 @@ dads app-name-here image-name doppler-token-here
 [3]: https://github.com/4lch4/Docker-Images/tree/main/Node
 [4]: https://hub.docker.com/repository/docker/4lch4/node/general
 [5]: https://git.4lch4.io/4lch4/Doppler-And-Docker-Starter
+[6]: https://taskfile.dev
+[7]: https://taskfile.dev/installation
