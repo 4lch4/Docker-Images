@@ -18,17 +18,17 @@ This image is the one mentioned in the initial example.
 
 It starts with the official [Node image][0] that's tagged as [`lts`][2] and then adds the [Doppler CLI][1] so it can be used for secret management.
 
-!!! tip Using the **Doppler CLI**
+#### Using the Doppler CLI
 
-    In order to use the **Doppler CLI** you _must_ pass a [Service Token](https://docs.doppler.com/docs/service-tokens) with, at least, read access to the config you wish to use. Here is an example:
+In order to use the **Doppler CLI** you _must_ pass a [Service Token](https://docs.doppler.com/docs/service-tokens) with, at least, read access to the config you wish to use. Here is an example:
 
-    ```bash
-    docker run -d --name=doppler-test \
-              -e DOPPLER_TOKEN="doppler-service-token-here" \
-              image-name-here
-    ```
-    
-    _NOTE: I also created a [CLI app](#cli-utility) to do this for you. If you're interested, I cover it in the following section._
+```bash
+docker run -d --name=doppler-test \
+            -e DOPPLER_TOKEN="doppler-service-token-here" \
+            image-name-here
+```
+
+_NOTE: I also created a [CLI app](#cli-utility) to do this for you. If you're interested, I cover it in the following section._
 
 ### CLI Utility
 
