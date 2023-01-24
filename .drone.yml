@@ -11,7 +11,7 @@ trigger:
       - promote
 
 steps:
-  - name: Build & Publish Image
+  - name: Build & Publish Node Image
     image: plugins/docker
     settings:
       username: 4lch4
