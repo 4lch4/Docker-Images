@@ -19,6 +19,7 @@ steps:
         from_secret: DOCKERHUB_TOKEN
       repo: 4lch4/node
       tags: latest
+      dockerfile: ./Node/Dockerfile
 
   - name: Send Built Notification
     image: appleboy/drone-discord
