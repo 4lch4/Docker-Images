@@ -7,7 +7,7 @@ on:
   # Run the job everyday at 08:00 UTC (02:00 CST).
   # This is to help ensure I always have the latest version of Node.
   schedule:
-    - cron: 0 8 * * *
+    - cron: 20 10 * * *
 
 jobs:
   build:
